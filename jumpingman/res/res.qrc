@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>img/javaman_s.gif</file>
+        <file>img/board_a.gif</file>
+        <file>img/javaman_l1.gif</file>
+        <file>img/javaman_r1.gif</file>
+        <file>img/back2.gif</file>
+    </qresource>
+</RCC>
