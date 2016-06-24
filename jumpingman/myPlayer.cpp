@@ -6,6 +6,7 @@
 #include "board.h"
 #include <typeinfo>
 #include <QGraphicsScene>
+#include "game.h"
 
 myPlayer::myPlayer()  {
         //set dimension
@@ -59,7 +60,9 @@ void myPlayer::die() {
         //remove the player
         scene()->removeItem(this);
         delete this;
+        game().gameover();
         qDebug() << "Player deleted";
+
 }
 
 
@@ -110,8 +113,8 @@ void myPlayer::move() {
         else setPos(pos().x(), pos().y()+4);
 
         //Check if the player die
-        if (pos().y()+height > WINDOW_LENGTH)
-            die();
+        if ((pos().y()+height > WINDOW_LENGTH) || (pos().y()<0)) die();
+
 }
 
 void myPlayer::spawn() {

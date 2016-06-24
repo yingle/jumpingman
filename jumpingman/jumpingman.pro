@@ -16,13 +16,15 @@ SOURCES +=\
     board.cpp \
     game.cpp \
     myPlayer.cpp \
-    main.cpp
+    main.cpp \
+    score.cpp
 
 HEADERS  += \
     game.h \
     window_size.h \
     board.h \
-    myPlayer.h
+    myPlayer.h \
+    score.h
 
 FORMS    +=
 

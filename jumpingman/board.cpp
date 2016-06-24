@@ -1,5 +1,5 @@
 #include "board.h"
-#include <QTimer>
+
 #include <QDebug>
 #include <QGraphicsScene>
 #include <stdlib.h> // rand() -> really large int
@@ -21,16 +21,22 @@ board::board() {
         setPos(random_number, WINDOW_LENGTH);
 
         // connect
-        QTimer * timer = new QTimer();
+        timer = new QTimer();
         connect(timer, SIGNAL(timeout()), this, SLOT(moveUp()));
 
         //set the timer
-        timer->start(15);
+        timer->start(10);
 }
 
 int board::getWidth()
 {
     return board::width;
+}
+
+void board::stopTimer()
+{
+     timer->stop();
+
 }
 
 void board::moveUp() {
@@ -42,3 +48,5 @@ void board::moveUp() {
                 qDebug() << "board deleted";
         }
 }
+
+
